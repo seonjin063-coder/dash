@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# OS Files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+desktop.ini
+
+# Raw Data Files
+# 용량이 크거나 개인적인 로컬 분석 원본 파일은 깃허브에 올리지 않는 것이 좋습니다.
+downloads/*.xls
+downloads/*.csv
+*.xls
+*.csv
+cols.txt
+
+# IDE / Editor Files
+.vscode/
+.idea/
+.vs/
