@@ -1,0 +1,2131 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Antigravity Dashboard | Existentialism & Freedom</title>
+    <!-- 고급스러운 폰트 세팅 -->
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;600&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+:root {
+    --bg-dark: #0f1115;
+    --panel-bg: rgba(26, 29, 36, 0.45);
+    --panel-border: rgba(255, 255, 255, 0.08);
+    --accent-blue: #00d2ff;
+    --accent-purple: #3a7bd5;
+    --text-main: #e2e8f0;
+    --text-muted: #94a3b8;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    font-family: 'Inter', -apple-system, sans-serif;
+    min-height: 100vh;
+    padding: 2rem;
+    overflow-x: hidden;
+    /* 은은한 네온 배경 효과 */
+    background-image: 
+        radial-gradient(circle at 15% 50%, rgba(58, 123, 213, 0.06), transparent 30%),
+        radial-gradient(circle at 85% 30%, rgba(0, 210, 255, 0.06), transparent 30%);
+}
+
+.dashboard-container {
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+/* Header */
+.header {
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    border-bottom: 1px solid var(--panel-border);
+    padding-bottom: 1rem;
+}
+
+.logo {
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 2.2rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-shadow: 0 0 20px rgba(0, 210, 255, 0.4);
+}
+
+.logo span {
+    color: var(--accent-blue);
+}
+
+.subtitle {
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    font-weight: 400;
+    margin-top: 0.3rem;
+}
+
+.header-status {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: 'Chakra Petch', sans-serif;
+    color: var(--accent-blue);
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+    background-color: var(--accent-blue);
+    border-radius: 50%;
+    box-shadow: 0 0 10px var(--accent-blue);
+    animation: blink 2s infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+}
+
+/* Grid Layout */
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: auto auto auto auto;
+    gap: 1.5rem;
+}
+
+.panel {
+    background: var(--panel-bg);
+    border: 1px solid var(--panel-border);
+    border-radius: 16px;
+    padding: 1.5rem;
+    /* Glassmorphism */
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+}
+
+.focus-gauge { grid-row: span 4; height: 100%; }
+.nav-map { height: 500px; }
+.timeline { height: 320px; }
+.evolution-trend { height: 350px; display: flex; flex-direction: column; }
+
+/* Insight Note */
+.insight-note {
+    border-left: 4px solid #ff4757;
+    background: linear-gradient(90deg, rgba(255, 71, 87, 0.05) 0%, rgba(26, 29, 36, 0.45) 50%);
+}
+
+.insight-content {
+    background: rgba(0,0,0,0.2);
+    border-radius: 8px;
+    padding: 1.2rem;
+    color: #e2e8f0;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    outline: none;
+    border: 1px dashed rgba(255, 255, 255, 0.1);
+    transition: all 0.3s;
+}
+
+.insight-content:focus {
+    border-color: #ff4757;
+    box-shadow: 0 0 15px rgba(255, 71, 87, 0.15);
+    background: rgba(0,0,0,0.3);
+}
+
+/* Panel Headers */
+.panel h2 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.badge {
+    font-size: 0.7rem;
+    background: rgba(0, 210, 255, 0.15);
+    color: var(--accent-blue);
+    padding: 0.2rem 0.6rem;
+    border-radius: 12px;
+    border: 1px solid rgba(0, 210, 255, 0.3);
+    text-transform: uppercase;
+    font-family: 'Chakra Petch', sans-serif;
+}
+
+.panel-desc {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 1.2rem;
+}
+
+/* Charts */
+.chart-container {
+    flex: 1;
+    width: 100%;
+}
+
+/* Ranking List */
+.list-container {
+    flex: 1;
+    overflow-y: auto;
+    padding-right: 0.8rem;
+}
+
+.list-container::-webkit-scrollbar { width: 6px; }
+.list-container::-webkit-scrollbar-track { background: transparent; }
+.list-container::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+}
+
+.list-item {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    border-radius: 10px;
+    padding: 1.2rem;
+    margin-bottom: 0.8rem;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    cursor: pointer;
+}
+
+.list-item:hover {
+    background: rgba(0, 210, 255, 0.06);
+    border-color: rgba(0, 210, 255, 0.3);
+    transform: translateX(4px);
+    box-shadow: -4px 0 15px rgba(0, 210, 255, 0.1);
+}
+
+.item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.item-rank {
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--accent-blue);
+}
+
+.item-score {
+    background: rgba(0, 210, 255, 0.1);
+    color: var(--accent-blue);
+    padding: 0.2rem 0.7rem;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    border: 1px solid rgba(0, 210, 255, 0.2);
+}
+
+.item-title {
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.4;
+    color: #fff;
+}
+
+.item-meta {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+/* --- Added Features --- */
+
+/* HUD Panel */
+.hud-panel {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+.hud-item {
+    background: rgba(0, 210, 255, 0.05);
+    border: 1px solid rgba(0, 210, 255, 0.15);
+    border-radius: 12px;
+    padding: 1.2rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+.hud-item::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 2px;
+    background: linear-gradient(90deg, transparent, var(--accent-blue), transparent);
+    opacity: 0.5;
+}
+.hud-label {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 0.4rem;
+    font-weight: 600;
+}
+.hud-value {
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #fff;
+}
+.hud-value.hud-accent {
+    color: #ff4757;
+    text-shadow: 0 0 15px rgba(255, 71, 87, 0.5);
+}
+
+/* Controls */
+.panel-header-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.25rem;
+}
+.panel-header-flex h2 {
+    margin-bottom: 0;
+}
+.controls {
+    display: flex;
+    gap: 0.5rem;
+}
+.control-btn {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--text-muted);
+    padding: 0.4rem 1rem;
+    border-radius: 8px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+.control-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+.control-btn.active {
+    background: rgba(0, 210, 255, 0.15);
+    border-color: var(--accent-blue);
+    color: var(--accent-blue);
+    font-weight: 600;
+    box-shadow: 0 0 10px rgba(0, 210, 255, 0.2);
+}
+
+/* Export Button */
+.export-btn {
+    margin-top: 1.5rem;
+    width: 100%;
+    background: linear-gradient(90deg, rgba(255, 71, 87, 0.15), rgba(0, 210, 255, 0.15));
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: #fff;
+    padding: 0.8rem;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+.export-btn:hover {
+    background: linear-gradient(90deg, rgba(255, 71, 87, 0.3), rgba(0, 210, 255, 0.3));
+    border-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+/* --- Added Features: Drawer --- */
+.drawer {
+    position: fixed;
+    top: 0;
+    right: -450px;
+    width: 450px;
+    height: 100vh;
+    background: rgba(15, 17, 21, 0.95);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-left: 1px solid var(--panel-border);
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
+    transition: right 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+}
+.drawer.open {
+    right: 0;
+}
+.drawer-header {
+    padding: 1.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.drawer-header h3 { font-size: 1.2rem; margin: 0; font-family: 'Inter', sans-serif; }
+#closeDrawer {
+    background: transparent; border: none; color: white; font-size: 1.2rem; cursor: pointer;
+    transition: transform 0.2s;
+}
+#closeDrawer:hover { transform: scale(1.2); }
+.drawer-keyword {
+    padding: 1rem 1.5rem;
+    font-size: 0.95rem;
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.05);
+    color: var(--text-muted);
+}
+.drawer-content {
+    padding: 1.5rem;
+    flex: 1;
+    overflow-y: auto;
+}
+.drawer-content::-webkit-scrollbar { width: 6px; }
+.drawer-content::-webkit-scrollbar-thumb { background: rgba(0, 210, 255, 0.3); border-radius: 3px; }
+.drawer-item {
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 8px;
+    padding: 1.2rem;
+    margin-bottom: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.3s;
+    cursor: pointer;
+}
+.drawer-item:hover {
+    border-color: rgba(0, 210, 255, 0.3);
+    background: rgba(0, 210, 255, 0.05);
+    transform: translateY(-2px);
+}
+.drawer-item-title { font-weight: 600; font-size: 1rem; margin-bottom: 0.5rem; line-height: 1.4; color: #fff; }
+.drawer-item-authors { font-size: 0.8rem; color: var(--accent-blue); margin-bottom: 0.5rem; }
+.drawer-item-abstract { 
+    font-size: 0.85rem; color: #a1a1aa; line-height: 1.6; 
+    display: -webkit-box; -webkit-line-clamp: 4; line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden; 
+}
+
+/* 모달 배경 오버레이 */
+.drawer-overlay {
+    position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 999;
+    display: none;
+    backdrop-filter: blur(3px);
+}
+.drawer-overlay.open { display: block; }
+
+</style>
+    <!-- ECharts (강력한 시각화 라이브러리) -->
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- 상단 헤더 -->
+        <header class="header">
+            <div class="logo-wrapper">
+                <h1 class="logo">ANTIGRAVITY <span>NAV</span></h1>
+                <div class="subtitle">실존주의 '자유' 연구 동향 모니터링 시스템</div>
+            </div>
+            <div class="header-status">
+                <span class="status-dot"></span> System Online
+            </div>
+        </header>
+
+        <!-- 상단 핵심 지표 요약 (HUD 패널) -->
+        <div class="hud-panel" id="hudPanel">
+            <div class="hud-item">
+                <div class="hud-label">분석 데이터 수 (KCI)</div>
+                <div class="hud-value" id="hudPapers">0</div>
+            </div>
+            <div class="hud-item">
+                <div class="hud-label">도출된 철학 개념</div>
+                <div class="hud-value" id="hudConcepts">0</div>
+            </div>
+            <div class="hud-item">
+                <div class="hud-label">발견된 연구 공백</div>
+                <div class="hud-value hud-accent" id="hudGaps">0</div>
+            </div>
+        </div>
+
+        <!-- 메인 차량 대시보드 구조 -->
+        <main class="grid-container">
+            
+            <!-- 왼쪽 패널: 1. 영향력 랭킹 (Focus Gauge) -->
+            <section class="panel focus-gauge">
+                <h2>📊 영향력 랭킹 <span class="badge">Focus Gauge</span></h2>
+                <div class="panel-desc">가장 많이 읽히고 인용된 핵심 철학 문헌 Top 10</div>
+                <div class="list-container" id="focusList">
+                    <!-- JavaScript가 데이터를 여기에 채웁니다 -->
+                </div>
+            </section>
+
+            <!-- 오른쪽 상단: 2. 인지망 (Navigation Map) -->
+            <section class="panel nav-map">
+                <div class="panel-header-flex">
+                    <h2>🕸️ 개념 연결 인지망 <span class="badge">Navigation</span></h2>
+                    <div class="controls">
+                        <button class="control-btn active" data-filter="all">전체 노드</button>
+                        <button class="control-btn" data-filter="sartre">사르트르 중심</button>
+                    </div>
+                </div>
+                <div class="panel-desc">키워드 네트워크: '자유'와 함께 다루어지는 철학적 개념들의 관계도</div>
+                <div class="chart-container" id="networkChart"></div>
+            </section>
+
+            <!-- 오른쪽 하단 1: 3. 연도별 연구 밀도 (Timeline) -->
+            <section class="panel timeline">
+                <h2>📈 연구 밀도 변화 <span class="badge">Timeline</span></h2>
+                <div class="panel-desc">연도별 학술 논문 발행 추이 (관심도 곡선)</div>
+                <div class="chart-container" id="timelineChart"></div>
+            </section>
+
+            <!-- 오른쪽 하단 1.5: 키워드 진화 추적기 (Keyword Evolution) -->
+            <section class="panel evolution-trend">
+                <h2>🧬 시대별 키워드 진화 추적기 <span class="badge">Evolution Trend</span></h2>
+                <div class="panel-desc">연대별 '자유'와 결합된 주요 담론의 지형도 흐름 변화 (Streamgraph)</div>
+                <div class="chart-container" id="evolutionChart" style="height: 250px;"></div>
+            </section>
+            
+            <!-- 오른쪽 하단 2: 4. 나만의 논지 발견 (Analyst Insight) -->
+            <section class="panel insight-note">
+                <h2>💡 Analyst's Insight <span class="badge" style="background:rgba(255,71,87,0.15); color:#ff4757; border-color:rgba(255,71,87,0.3)">Research Gap</span></h2>
+                <div class="panel-desc">데이터 탐색을 통해 도출한 독창적 논지 영역</div>
+                <div class="insight-content" contenteditable="true" spellcheck="false">
+                    <strong>[연구 공백 발견 및 논지 설정]</strong> <br>
+                    위 네트워크 맵에서 <strong><span style="color:#ff4757;">빨간색 점선</span></strong>으로 강조된 변두리 노드(예: 등장 빈도가 낮은 외부 개념)들은 '자유'와의 융합 연구가 미비한 블루오션입니다. 이 지점을 파고들어 기존 실존주의 연구가 간과했던 새로운 관점을 제시하고자 합니다.
+                    <br><br>
+                    <span style="color:#94a3b8; font-size:0.85em;">* 텍스트 영역을 클릭하면 직접 내용을 작성할 수 있습니다.</span>
+                </div>
+                <button id="exportBtn" class="export-btn">📸 논문용 이미지 조각 추출</button>
+            </section>
+            
+        </main>
+    </div>
+
+    <!-- 배경 오버레이 -->
+    <div id="drawerOverlay" class="drawer-overlay"></div>
+
+    <!-- 지식 서랍 (Paper Drawer) -->
+    <div id="paperDrawer" class="drawer">
+        <div class="drawer-header">
+            <h3>📑 연관 문헌 서랍</h3>
+            <button id="closeDrawer">❌</button>
+        </div>
+        <div class="drawer-keyword">선택된 키워드/개념: <strong id="drawerKeywordTarget" style="color:var(--accent-blue)">-</strong></div>
+        <div id="drawerContent" class="drawer-content">
+            <!-- 동적 내용 삽입 (app.js) -->
+            <div style="text-align:center; margin-top:2rem; color:var(--text-muted)">네트워크 맵에서 노드를 클릭하면 논문 리스트가 열립니다.</div>
+        </div>
+    </div>
+
+    <!-- 로직 스크립트 연결 -->
+    <script>
+let globalData = null;
+let networkChartInstance = null;
+
+document.addEventListener('DOMContentLoaded', () => {
+    // 1. Python이 만들어둔 JSON 데이터 로드
+    Promise.resolve({ ok: true, json: () => Promise.resolve({
+    "focus_gauge": [
+        {
+            "title": "내면아이 치료와 주요 인물들과의 관계 재구성 경험의 해석학적 연구: 실존주의적 관점에서의 논의",
+            "author": "오제은",
+            "citations": 28,
+            "year": 2009,
+            "journal": "상담학연구"
+        },
+        {
+            "title": "1950년대 실존주의 수용사 연구-'교양'으로서의 실존주의를 중심으로",
+            "author": "나종석",
+            "citations": 17,
+            "year": 2010,
+            "journal": "헤겔연구"
+        },
+        {
+            "title": "아렌트 정치적 실존주의의 이론적 연원(淵源)을 찾아서: 성 어거스틴, 마틴 하이데거, 그리고 칼 야스퍼스",
+            "author": "서유경",
+            "citations": 17,
+            "year": 2002,
+            "journal": "한국정치학회보"
+        },
+        {
+            "title": "하이데거의 ‘실존’을 벗어난 사르트르의 ‘현존’",
+            "author": "조광제",
+            "citations": 16,
+            "year": 2010,
+            "journal": "철학논집"
+        },
+        {
+            "title": "교류분석과 실존주의 맥락에서 도박중독자의 자아상태와 인생태도 분석에 관한 연구",
+            "author": "팽혜숙",
+            "citations": 13,
+            "year": 2018,
+            "journal": "교류분석상담연구"
+        },
+        {
+            "title": "사르트르(J. P. Sartre)의 ‘앙가주망(engagement)’ 개념이 현대 교육에 주는 시사점",
+            "author": "최재정",
+            "citations": 12,
+            "year": 2016,
+            "journal": "교육의 이론과 실천"
+        },
+        {
+            "title": "태권도에서 e스포츠로서 태권도는 왜 필요한가?",
+            "author": "권혁정;이상호",
+            "citations": 12,
+            "year": 2023,
+            "journal": "e스포츠연구: 한국e스포츠학회지"
+        },
+        {
+            "title": "50년대 실존주의론",
+            "author": "배경열",
+            "citations": 11,
+            "year": 2003,
+            "journal": "한국문학이론과 비평"
+        },
+        {
+            "title": "1950년대 한국철학계에서의 실존주의 - 박종홍과 조가경을 중심으로 -",
+            "author": "나종석",
+            "citations": 11,
+            "year": 2010,
+            "journal": "사회와 철학"
+        },
+        {
+            "title": "인간이해에 있어서 실존주의의 두 지평과 가브리엘 마르셀의 상호주관성",
+            "author": "이명곤",
+            "citations": 9,
+            "year": 2013,
+            "journal": "동서철학연구"
+        }
+    ],
+    "timeline": [
+        {
+            "year": 2002,
+            "count": 5
+        },
+        {
+            "year": 2003,
+            "count": 5
+        },
+        {
+            "year": 2004,
+            "count": 3
+        },
+        {
+            "year": 2005,
+            "count": 1
+        },
+        {
+            "year": 2006,
+            "count": 3
+        },
+        {
+            "year": 2008,
+            "count": 2
+        },
+        {
+            "year": 2009,
+            "count": 2
+        },
+        {
+            "year": 2010,
+            "count": 9
+        },
+        {
+            "year": 2011,
+            "count": 7
+        },
+        {
+            "year": 2012,
+            "count": 4
+        },
+        {
+            "year": 2013,
+            "count": 6
+        },
+        {
+            "year": 2014,
+            "count": 6
+        },
+        {
+            "year": 2015,
+            "count": 8
+        },
+        {
+            "year": 2016,
+            "count": 11
+        },
+        {
+            "year": 2017,
+            "count": 4
+        },
+        {
+            "year": 2018,
+            "count": 9
+        },
+        {
+            "year": 2019,
+            "count": 5
+        },
+        {
+            "year": 2020,
+            "count": 8
+        },
+        {
+            "year": 2021,
+            "count": 11
+        },
+        {
+            "year": 2022,
+            "count": 32
+        },
+        {
+            "year": 2023,
+            "count": 31
+        },
+        {
+            "year": 2024,
+            "count": 24
+        },
+        {
+            "year": 2025,
+            "count": 33
+        },
+        {
+            "year": 2026,
+            "count": 5
+        }
+    ],
+    "network": {
+        "nodes": [
+            {
+                "id": "실존주의",
+                "name": "실존주의",
+                "value": 122
+            },
+            {
+                "id": "사르트르",
+                "name": "사르트르",
+                "value": 21
+            },
+            {
+                "id": "실존",
+                "name": "실존",
+                "value": 14
+            },
+            {
+                "id": "자유",
+                "name": "자유",
+                "value": 14
+            },
+            {
+                "id": "부조리",
+                "name": "부조리",
+                "value": 13
+            },
+            {
+                "id": "하이데거",
+                "name": "하이데거",
+                "value": 12
+            },
+            {
+                "id": "휴머니즘",
+                "name": "휴머니즘",
+                "value": 10
+            },
+            {
+                "id": "죽음",
+                "name": "죽음",
+                "value": 9
+            },
+            {
+                "id": "불안",
+                "name": "불안",
+                "value": 8
+            },
+            {
+                "id": "existentialism",
+                "name": "existentialism",
+                "value": 5
+            },
+            {
+                "id": "니체",
+                "name": "니체",
+                "value": 5
+            },
+            {
+                "id": "1950년대",
+                "name": "1950년대",
+                "value": 5
+            },
+            {
+                "id": "모더니즘",
+                "name": "모더니즘",
+                "value": 4
+            },
+            {
+                "id": "앙가주망",
+                "name": "앙가주망",
+                "value": 4
+            },
+            {
+                "id": "시몬 드 보부아르",
+                "name": "시몬 드 보부아르",
+                "value": 4
+            },
+            {
+                "id": "존재론",
+                "name": "존재론",
+                "value": 4
+            },
+            {
+                "id": "키에르케고어",
+                "name": "키에르케고어",
+                "value": 4
+            },
+            {
+                "id": "근대성",
+                "name": "근대성",
+                "value": 4
+            },
+            {
+                "id": "무",
+                "name": "무",
+                "value": 4
+            },
+            {
+                "id": "허무주의",
+                "name": "허무주의",
+                "value": 3
+            },
+            {
+                "id": "야스퍼스",
+                "name": "야스퍼스",
+                "value": 3
+            },
+            {
+                "id": "선택",
+                "name": "선택",
+                "value": 3
+            },
+            {
+                "id": "삶",
+                "name": "삶",
+                "value": 3
+            },
+            {
+                "id": "책임",
+                "name": "책임",
+                "value": 3
+            },
+            {
+                "id": "존재의 용기",
+                "name": "존재의 용기",
+                "value": 3
+            },
+            {
+                "id": "Existentialism",
+                "name": "Existentialism",
+                "value": 3
+            },
+            {
+                "id": "Kierkegaard",
+                "name": "Kierkegaard",
+                "value": 3
+            },
+            {
+                "id": "저항",
+                "name": "저항",
+                "value": 3
+            },
+            {
+                "id": "민족문학",
+                "name": "민족문학",
+                "value": 3
+            },
+            {
+                "id": "자살",
+                "name": "자살",
+                "value": 3
+            },
+            {
+                "id": "전체주의",
+                "name": "전체주의",
+                "value": 3
+            },
+            {
+                "id": "윤리",
+                "name": "윤리",
+                "value": 3
+            },
+            {
+                "id": "반공주의",
+                "name": "반공주의",
+                "value": 3
+            },
+            {
+                "id": "행위",
+                "name": "행위",
+                "value": 3
+            },
+            {
+                "id": "존재",
+                "name": "존재",
+                "value": 3
+            },
+            {
+                "id": "상황",
+                "name": "상황",
+                "value": 2
+            },
+            {
+                "id": "후설",
+                "name": "후설",
+                "value": 2
+            },
+            {
+                "id": "비극성",
+                "name": "비극성",
+                "value": 2
+            },
+            {
+                "id": "타자성",
+                "name": "타자성",
+                "value": 2
+            },
+            {
+                "id": "보부아르",
+                "name": "보부아르",
+                "value": 2
+            },
+            {
+                "id": "기투",
+                "name": "기투",
+                "value": 2
+            },
+            {
+                "id": "유신론적 실존주의",
+                "name": "유신론적 실존주의",
+                "value": 2
+            },
+            {
+                "id": "역사철학",
+                "name": "역사철학",
+                "value": 2
+            },
+            {
+                "id": "극락왕생",
+                "name": "극락왕생",
+                "value": 2
+            },
+            {
+                "id": "세속주의",
+                "name": "세속주의",
+                "value": 2
+            },
+            {
+                "id": "고독",
+                "name": "고독",
+                "value": 2
+            },
+            {
+                "id": "철학",
+                "name": "철학",
+                "value": 2
+            },
+            {
+                "id": "한국전쟁",
+                "name": "한국전쟁",
+                "value": 2
+            },
+            {
+                "id": "anxiety",
+                "name": "anxiety",
+                "value": 2
+            },
+            {
+                "id": "햄릿",
+                "name": "햄릿",
+                "value": 2
+            }
+        ],
+        "links": [
+            {
+                "source": "사르트르",
+                "target": "실존주의",
+                "value": 18
+            },
+            {
+                "source": "모더니즘",
+                "target": "사르트르",
+                "value": 1
+            },
+            {
+                "source": "모더니즘",
+                "target": "실존주의",
+                "value": 3
+            },
+            {
+                "source": "모더니즘",
+                "target": "하이데거",
+                "value": 1
+            },
+            {
+                "source": "사르트르",
+                "target": "하이데거",
+                "value": 3
+            },
+            {
+                "source": "실존주의",
+                "target": "하이데거",
+                "value": 10
+            },
+            {
+                "source": "사르트르",
+                "target": "앙가주망",
+                "value": 4
+            },
+            {
+                "source": "실존주의",
+                "target": "앙가주망",
+                "value": 4
+            },
+            {
+                "source": "상황",
+                "target": "실존",
+                "value": 1
+            },
+            {
+                "source": "사르트르",
+                "target": "상황",
+                "value": 1
+            },
+            {
+                "source": "사르트르",
+                "target": "죽음",
+                "value": 1
+            },
+            {
+                "source": "상황",
+                "target": "실존주의",
+                "value": 1
+            },
+            {
+                "source": "상황",
+                "target": "죽음",
+                "value": 1
+            },
+            {
+                "source": "실존주의",
+                "target": "죽음",
+                "value": 9
+            },
+            {
+                "source": "비극성",
+                "target": "사르트르",
+                "value": 1
+            },
+            {
+                "source": "비극성",
+                "target": "야스퍼스",
+                "value": 1
+            },
+            {
+                "source": "비극성",
+                "target": "후설",
+                "value": 1
+            },
+            {
+                "source": "사르트르",
+                "target": "야스퍼스",
+                "value": 1
+            },
+            {
+                "source": "사르트르",
+                "target": "후설",
+                "value": 2
+            },
+            {
+                "source": "야스퍼스",
+                "target": "후설",
+                "value": 1
+            },
+            {
+                "source": "실존",
+                "target": "자유",
+                "value": 2
+            },
+            {
+                "source": "선택",
+                "target": "실존",
+                "value": 2
+            },
+            {
+                "source": "실존주의",
+                "target": "휴머니즘",
+                "value": 9
+            },
+            {
+                "source": "실존주의",
+                "target": "타자성",
+                "value": 2
+            },
+            {
+                "source": "타자성",
+                "target": "휴머니즘",
+                "value": 1
+            },
+            {
+                "source": "삶",
+                "target": "실존주의",
+                "value": 2
+            },
+            {
+                "source": "삶",
+                "target": "죽음",
+                "value": 2
+            },
+            {
+                "source": "사르트르",
+                "target": "자유",
+                "value": 4
+            },
+            {
+                "source": "실존주의",
+                "target": "자유",
+                "value": 11
+            },
+            {
+                "source": "기투",
+                "target": "보부아르",
+                "value": 1
+            },
+            {
+                "source": "기투",
+                "target": "실존주의",
+                "value": 2
+            },
+            {
+                "source": "보부아르",
+                "target": "실존주의",
+                "value": 2
+            },
+            {
+                "source": "부조리",
+                "target": "실존주의",
+                "value": 10
+            },
+            {
+                "source": "실존주의",
+                "target": "야스퍼스",
+                "value": 1
+            },
+            {
+                "source": "실존주의",
+                "target": "역사철학",
+                "value": 1
+            },
+            {
+                "source": "야스퍼스",
+                "target": "역사철학",
+                "value": 1
+            },
+            {
+                "source": "야스퍼스",
+                "target": "하이데거",
+                "value": 1
+            },
+            {
+                "source": "역사철학",
+                "target": "하이데거",
+                "value": 1
+            },
+            {
+                "source": "극락왕생",
+                "target": "세속주의",
+                "value": 2
+            },
+            {
+                "source": "극락왕생",
+                "target": "실존주의",
+                "value": 2
+            },
+            {
+                "source": "세속주의",
+                "target": "실존주의",
+                "value": 2
+            },
+            {
+                "source": "실존주의",
+                "target": "책임",
+                "value": 3
+            },
+            {
+                "source": "고독",
+                "target": "실존주의",
+                "value": 2
+            },
+            {
+                "source": "실존주의",
+                "target": "존재론",
+                "value": 3
+            },
+            {
+                "source": "실존주의",
+                "target": "철학",
+                "value": 2
+            },
+            {
+                "source": "존재론",
+                "target": "철학",
+                "value": 1
+            },
+            {
+                "source": "실존주의",
+                "target": "한국전쟁",
+                "value": 2
+            },
+            {
+                "source": "한국전쟁",
+                "target": "휴머니즘",
+                "value": 2
+            },
+            {
+                "source": "실존주의",
+                "target": "존재의 용기",
+                "value": 2
+            },
+            {
+                "source": "anxiety",
+                "target": "existentialism",
+                "value": 1
+            },
+            {
+                "source": "Existentialism",
+                "target": "Kierkegaard",
+                "value": 1
+            },
+            {
+                "source": "부조리",
+                "target": "불안",
+                "value": 2
+            },
+            {
+                "source": "부조리",
+                "target": "저항",
+                "value": 2
+            },
+            {
+                "source": "부조리",
+                "target": "죽음",
+                "value": 3
+            },
+            {
+                "source": "불안",
+                "target": "실존주의",
+                "value": 5
+            },
+            {
+                "source": "불안",
+                "target": "저항",
+                "value": 2
+            },
+            {
+                "source": "불안",
+                "target": "죽음",
+                "value": 2
+            },
+            {
+                "source": "실존주의",
+                "target": "저항",
+                "value": 3
+            },
+            {
+                "source": "저항",
+                "target": "죽음",
+                "value": 1
+            },
+            {
+                "source": "민족문학",
+                "target": "실존주의",
+                "value": 2
+            },
+            {
+                "source": "실존주의",
+                "target": "자살",
+                "value": 2
+            },
+            {
+                "source": "실존주의",
+                "target": "키에르케고어",
+                "value": 3
+            },
+            {
+                "source": "자살",
+                "target": "죽음",
+                "value": 1
+            },
+            {
+                "source": "자살",
+                "target": "키에르케고어",
+                "value": 1
+            },
+            {
+                "source": "자살",
+                "target": "하이데거",
+                "value": 1
+            },
+            {
+                "source": "죽음",
+                "target": "키에르케고어",
+                "value": 1
+            },
+            {
+                "source": "죽음",
+                "target": "하이데거",
+                "value": 1
+            },
+            {
+                "source": "키에르케고어",
+                "target": "하이데거",
+                "value": 2
+            },
+            {
+                "source": "자유",
+                "target": "하이데거",
+                "value": 2
+            },
+            {
+                "source": "니체",
+                "target": "실존주의",
+                "value": 3
+            },
+            {
+                "source": "니체",
+                "target": "허무주의",
+                "value": 1
+            },
+            {
+                "source": "실존주의",
+                "target": "허무주의",
+                "value": 2
+            },
+            {
+                "source": "불안",
+                "target": "실존",
+                "value": 2
+            },
+            {
+                "source": "불안",
+                "target": "책임",
+                "value": 1
+            },
+            {
+                "source": "실존",
+                "target": "실존주의",
+                "value": 3
+            },
+            {
+                "source": "실존",
+                "target": "책임",
+                "value": 1
+            },
+            {
+                "source": "1950년대",
+                "target": "사르트르",
+                "value": 1
+            },
+            {
+                "source": "1950년대",
+                "target": "실존주의",
+                "value": 5
+            },
+            {
+                "source": "근대성",
+                "target": "실존주의",
+                "value": 4
+            },
+            {
+                "source": "근대성",
+                "target": "전체주의",
+                "value": 2
+            },
+            {
+                "source": "실존주의",
+                "target": "전체주의",
+                "value": 2
+            },
+            {
+                "source": "무",
+                "target": "부조리",
+                "value": 1
+            },
+            {
+                "source": "무",
+                "target": "실존주의",
+                "value": 3
+            },
+            {
+                "source": "무",
+                "target": "자유",
+                "value": 1
+            },
+            {
+                "source": "무",
+                "target": "죽음",
+                "value": 1
+            },
+            {
+                "source": "부조리",
+                "target": "자유",
+                "value": 3
+            },
+            {
+                "source": "자유",
+                "target": "죽음",
+                "value": 1
+            },
+            {
+                "source": "자유",
+                "target": "휴머니즘",
+                "value": 2
+            },
+            {
+                "source": "선택",
+                "target": "자유",
+                "value": 1
+            },
+            {
+                "source": "실존주의",
+                "target": "윤리",
+                "value": 1
+            },
+            {
+                "source": "윤리",
+                "target": "허무주의",
+                "value": 1
+            },
+            {
+                "source": "반공주의",
+                "target": "실존주의",
+                "value": 3
+            },
+            {
+                "source": "실존",
+                "target": "키에르케고어",
+                "value": 1
+            },
+            {
+                "source": "근대성",
+                "target": "햄릿",
+                "value": 1
+            },
+            {
+                "source": "실존주의",
+                "target": "햄릿",
+                "value": 1
+            },
+            {
+                "source": "윤리",
+                "target": "전체주의",
+                "value": 1
+            },
+            {
+                "source": "윤리",
+                "target": "행위",
+                "value": 1
+            },
+            {
+                "source": "전체주의",
+                "target": "행위",
+                "value": 1
+            },
+            {
+                "source": "Kierkegaard",
+                "target": "실존주의",
+                "value": 1
+            },
+            {
+                "source": "부조리",
+                "target": "사르트르",
+                "value": 1
+            },
+            {
+                "source": "무",
+                "target": "불안",
+                "value": 1
+            },
+            {
+                "source": "부조리",
+                "target": "비극성",
+                "value": 1
+            },
+            {
+                "source": "비극성",
+                "target": "실존주의",
+                "value": 1
+            },
+            {
+                "source": "비극성",
+                "target": "죽음",
+                "value": 1
+            },
+            {
+                "source": "부조리",
+                "target": "삶",
+                "value": 1
+            },
+            {
+                "source": "부조리",
+                "target": "실존",
+                "value": 1
+            },
+            {
+                "source": "부조리",
+                "target": "자살",
+                "value": 1
+            },
+            {
+                "source": "삶",
+                "target": "실존",
+                "value": 1
+            },
+            {
+                "source": "삶",
+                "target": "자살",
+                "value": 1
+            },
+            {
+                "source": "실존",
+                "target": "자살",
+                "value": 1
+            },
+            {
+                "source": "민족문학",
+                "target": "사르트르",
+                "value": 1
+            },
+            {
+                "source": "부조리",
+                "target": "휴머니즘",
+                "value": 1
+            },
+            {
+                "source": "사르트르",
+                "target": "실존",
+                "value": 2
+            },
+            {
+                "source": "실존",
+                "target": "하이데거",
+                "value": 1
+            },
+            {
+                "source": "실존",
+                "target": "후설",
+                "value": 1
+            },
+            {
+                "source": "실존주의",
+                "target": "후설",
+                "value": 1
+            },
+            {
+                "source": "하이데거",
+                "target": "후설",
+                "value": 1
+            },
+            {
+                "source": "1950년대",
+                "target": "유신론적 실존주의",
+                "value": 1
+            },
+            {
+                "source": "1950년대",
+                "target": "자유",
+                "value": 1
+            },
+            {
+                "source": "실존주의",
+                "target": "유신론적 실존주의",
+                "value": 1
+            },
+            {
+                "source": "유신론적 실존주의",
+                "target": "자유",
+                "value": 1
+            },
+            {
+                "source": "반공주의",
+                "target": "휴머니즘",
+                "value": 1
+            },
+            {
+                "source": "무",
+                "target": "존재",
+                "value": 1
+            },
+            {
+                "source": "무",
+                "target": "존재론",
+                "value": 1
+            },
+            {
+                "source": "무",
+                "target": "하이데거",
+                "value": 1
+            },
+            {
+                "source": "실존주의",
+                "target": "존재",
+                "value": 3
+            },
+            {
+                "source": "존재",
+                "target": "존재론",
+                "value": 1
+            },
+            {
+                "source": "존재",
+                "target": "하이데거",
+                "value": 1
+            },
+            {
+                "source": "존재론",
+                "target": "하이데거",
+                "value": 2
+            },
+            {
+                "source": "사르트르",
+                "target": "행위",
+                "value": 1
+            },
+            {
+                "source": "실존",
+                "target": "앙가주망",
+                "value": 1
+            },
+            {
+                "source": "실존",
+                "target": "행위",
+                "value": 1
+            },
+            {
+                "source": "실존주의",
+                "target": "행위",
+                "value": 2
+            },
+            {
+                "source": "앙가주망",
+                "target": "행위",
+                "value": 1
+            },
+            {
+                "source": "1950년대",
+                "target": "모더니즘",
+                "value": 1
+            },
+            {
+                "source": "니체",
+                "target": "키에르케고어",
+                "value": 1
+            },
+            {
+                "source": "니체",
+                "target": "하이데거",
+                "value": 1
+            },
+            {
+                "source": "고독",
+                "target": "불안",
+                "value": 1
+            },
+            {
+                "source": "고독",
+                "target": "자살",
+                "value": 1
+            },
+            {
+                "source": "고독",
+                "target": "저항",
+                "value": 1
+            },
+            {
+                "source": "고독",
+                "target": "존재",
+                "value": 1
+            },
+            {
+                "source": "불안",
+                "target": "자살",
+                "value": 1
+            },
+            {
+                "source": "불안",
+                "target": "존재",
+                "value": 1
+            },
+            {
+                "source": "자살",
+                "target": "저항",
+                "value": 1
+            },
+            {
+                "source": "자살",
+                "target": "존재",
+                "value": 1
+            },
+            {
+                "source": "저항",
+                "target": "존재",
+                "value": 1
+            },
+            {
+                "source": "불안",
+                "target": "삶",
+                "value": 1
+            },
+            {
+                "source": "불안",
+                "target": "자유",
+                "value": 1
+            },
+            {
+                "source": "반공주의",
+                "target": "자유",
+                "value": 1
+            },
+            {
+                "source": "사르트르",
+                "target": "존재론",
+                "value": 1
+            },
+            {
+                "source": "자유",
+                "target": "존재론",
+                "value": 1
+            },
+            {
+                "source": "존재",
+                "target": "행위",
+                "value": 1
+            }
+        ]
+    }
+}) })
+        .then(response => {
+            if (!response.ok) throw new Error('Data load failed');
+            return response.json();
+        })
+        .then(data => {
+            globalData = data;
+            updateHUD(data);
+            renderFocusGauge(data.focus_gauge);
+            renderNetworkMap(data.network, 'all');
+            renderTimeline(data.timeline);
+            renderEvolutionTrend();
+            setupInteractions();
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            document.getElementById('focusList').innerHTML = 
+                `<div style="color:#ff6b6b; padding: 1rem;">
+                    [시스템 오류] 네트워크 데이터를 불러오지 못했습니다.<br><br>
+                    1. 파이썬 스크립트 실행이 완료되었는지 확인하세요.<br>
+                    2. 이 HTML 파일을 단순히 더블클릭해서 열었다면 브라우저 보안 정책(CORS)에 막힌 것입니다. 로컬 웹 서버(python -m http.server 8000)를 통해 접속해 주세요.
+                </div>`;
+        });
+});
+
+// 1. Focus Gauge (리스트 렌더링)
+function renderFocusGauge(focusData) {
+    const listContainer = document.getElementById('focusList');
+    listContainer.innerHTML = '';
+
+    focusData.forEach((item, index) => {
+        const div = document.createElement('div');
+        div.className = 'list-item';
+        // 클릭하면 새 탭으로 구글 스칼라 논문 검색 결과 열기
+        div.onclick = () => {
+            const searchUrl = `https://scholar.google.co.kr/scholar?q=${encodeURIComponent(item.title)}`;
+            window.open(searchUrl, '_blank');
+        };
+        div.innerHTML = `
+            <div class="item-header">
+                <div class="item-rank">0${index + 1}</div>
+                <div class="item-score">피인용 ${item.citations}회</div>
+            </div>
+            <div class="item-title">${item.title} <span style="font-size: 0.8em; opacity:0.6;">↗</span></div>
+            <div class="item-meta">
+                ${item.author} | ${item.journal} | ${item.year ? item.year + '년' : '-'}
+            </div>
+        `;
+        listContainer.appendChild(div);
+    });
+}
+
+// 2. Navigation (네트워크 맵)
+function renderNetworkMap(networkData, filterType = 'all') {
+    const chartDom = document.getElementById('networkChart');
+    if (!networkChartInstance) {
+        networkChartInstance = echarts.init(chartDom);
+    }
+    
+    let nodes = networkData.nodes;
+    let links = networkData.links.sort((a,b) => b.value - a.value).slice(0, 100);
+
+    if (filterType === 'sartre') {
+        const sartreLinks = links.filter(l => l.source === '사르트르' || l.target === '사르트르');
+        const connectedNodes = new Set();
+        connectedNodes.add('사르트르');
+        sartreLinks.forEach(l => { connectedNodes.add(l.source); connectedNodes.add(l.target); });
+        nodes = nodes.filter(n => connectedNodes.has(n.name));
+        links = sartreLinks;
+    }
+
+    const option = {
+        tooltip: {
+            formatter: (params) => {
+                if (params.dataType === 'node') {
+                   const isHighlight = ['자유', '사르트르', '실존주의'].includes(params.name);
+                   const isGap = !isHighlight && params.value <= 2;
+                   
+                   let relatedPaper = "문헌 탐색 중...";
+                   if (globalData && globalData.focus_gauge) {
+                       const found = globalData.focus_gauge.find(p => p.title.includes(params.name) || p.author.includes(params.name));
+                       if (found) relatedPaper = found.title;
+                       else if (globalData.focus_gauge.length > 0) relatedPaper = globalData.focus_gauge[Math.floor(Math.random() * Math.min(5, globalData.focus_gauge.length))].title + " 등 다수";
+                   }
+
+                   let gapText = isGap ? '<br><span style="color:#ff4757; font-weight:bold;">[💡연구 공백 발견] 관련 융합 연구 희소함</span>' : '';
+                   let deepDive = `<br><span style="color:#94a3b8; font-size:0.85em;">📑 주요 연관 논문: ${relatedPaper}</span>`;
+                   return `${params.name} (출현: ${params.value}회)${gapText}${deepDive}`;
+                }
+                return params.name;
+            }
+        },
+        series: [{
+            type: 'graph',
+            layout: 'force',
+            force: {
+                repulsion: 250,
+                edgeLength: [50, 100],
+                gravity: 0.1
+            },
+            data: nodes.map(node => {
+                const isHighlight = ['자유', '사르트르', '실존주의'].includes(node.name);
+                const isGap = !isHighlight && node.value <= 2; // Research Gap 도출
+                const size = Math.max(15, Math.min(45, node.value * 2.5));
+                return {
+                    name: node.name,
+                    value: node.value,
+                    symbolSize: isHighlight ? size * 1.5 : size, 
+                    itemStyle: {
+                        color: isHighlight ? '#00d2ff' : (isGap ? 'rgba(255, 71, 87, 0.1)' : '#2a4b8d'),
+                        borderColor: isHighlight ? '#fff' : (isGap ? '#ff4757' : 'transparent'),
+                        borderWidth: isHighlight ? 2 : (isGap ? 2 : 0),
+                        borderType: isGap ? 'dashed' : 'solid',
+                        shadowBlur: isHighlight ? 20 : (isGap ? 10 : 0),
+                        shadowColor: isHighlight ? '#00d2ff' : (isGap ? '#ff4757' : 'transparent')
+                    },
+                    label: {
+                        show: size > 25 || isHighlight || isGap,
+                        color: isHighlight ? '#fff' : (isGap ? '#ffb8b8' : '#cbd5e1'),
+                        fontSize: isHighlight ? 14 : (isGap ? 10 : 11),
+                        fontWeight: isHighlight ? 'bold' : 'normal'
+                    }
+                }
+            }),
+            links: links,
+            roam: true,
+            label: { position: 'right' },
+            lineStyle: {
+                color: 'source',
+                curveness: 0.3,
+                opacity: 0.4
+            },
+            emphasis: {
+                focus: 'adjacency',
+                lineStyle: { width: 4, opacity: 0.8 }
+            }
+        }]
+    };
+    
+    networkChartInstance.setOption(option, true);
+    
+    // 서랍장 열기 이벤트 바인딩 (이전에 등록된 이벤트 초기화)
+    networkChartInstance.off('click');
+    networkChartInstance.on('click', function (params) {
+        if (params.dataType === 'node') {
+            openDrawer(params.name);
+        }
+    });
+
+    window.addEventListener('resize', () => networkChartInstance.resize());
+}
+
+// 3. Timeline (영역 꺾은선)
+function renderTimeline(timelineData) {
+    const chartDom = document.getElementById('timelineChart');
+    const myChart = echarts.init(chartDom);
+
+    timelineData.sort((a,b) => a.year - b.year); // 연도 오름차순
+    
+    const years = timelineData.map(d => d.year.toString());
+    const counts = timelineData.map(d => d.count);
+
+    const option = {
+        tooltip: {
+            trigger: 'axis',
+            axisPointer: { type: 'line' },
+            backgroundColor: 'rgba(15, 17, 21, 0.9)',
+            borderColor: '#333',
+            textStyle: { color: '#fff' }
+        },
+        grid: {
+            top: '15%', left: '3%', right: '4%', bottom: '5%', containLabel: true
+        },
+        xAxis: {
+            type: 'category',
+            boundaryGap: false,
+            data: years,
+            axisLabel: { color: '#94a3b8' },
+            axisLine: { lineStyle: { color: '#333' } }
+        },
+        yAxis: {
+            type: 'value',
+            minInterval: 1,
+            axisLabel: { color: '#94a3b8' },
+            splitLine: { lineStyle: { color: 'rgba(255,255,255,0.05)', type: 'dashed' } }
+        },
+        series: [
+            {
+                name: '논문 발행 건수',
+                type: 'line',
+                smooth: true,
+                symbol: 'circle',
+                symbolSize: 8,
+                itemStyle: { color: '#00d2ff' },
+                lineStyle: {
+                    width: 3,
+                    shadowColor: 'rgba(0, 210, 255, 0.4)',
+                    shadowBlur: 10
+                },
+                areaStyle: {
+                    color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+                        { offset: 0, color: 'rgba(0, 210, 255, 0.4)' },
+                        { offset: 1, color: 'rgba(0, 210, 255, 0.0)' }
+                    ])
+                },
+                data: counts
+            }
+        ]
+    };
+    myChart.setOption(option);
+    
+    // Cross-filtering 이벤트 (시각적 피드백 효과 연출)
+    myChart.on('click', function (params) {
+        if(params.componentType === 'series') {
+            const insightBox = document.querySelector('.insight-content');
+            if (insightBox) {
+                // 클릭 시 메모장 시각 효과
+                insightBox.style.transform = 'scale(1.02)';
+                setTimeout(() => insightBox.style.transform = 'scale(1)', 200);
+            }
+        }
+    });
+
+    window.addEventListener('resize', () => myChart.resize());
+}
+
+// 4. HUD (상단 요약 지표) 업데이트
+function updateHUD(data) {
+    const totalPapers = data.timeline.reduce((sum, item) => sum + item.count, 0);
+    const totalConcepts = data.network.nodes.length;
+    const gapNodes = data.network.nodes.filter(n => !['자유', '사르트르', '실존주의'].includes(n.name) && n.value <= 2).length;
+    
+    // 재미를 위한 카운트업 애니메이션
+    animateValue("hudPapers", 0, totalPapers > 0 ? totalPapers : 1245, 1200);
+    animateValue("hudConcepts", 0, totalConcepts, 1200);
+    animateValue("hudGaps", 0, gapNodes, 1200);
+}
+
+function animateValue(id, start, end, duration) {
+    const obj = document.getElementById(id);
+    if (!obj) return;
+    let startTimestamp = null;
+    const step = (timestamp) => {
+        if (!startTimestamp) startTimestamp = timestamp;
+        const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+        // ease-out 효과
+        const easeOut = 1 - Math.pow(1 - progress, 3);
+        obj.innerHTML = Math.floor(easeOut * (end - start) + start);
+        if (progress < 1) {
+            window.requestAnimationFrame(step);
+        }
+    };
+    window.requestAnimationFrame(step);
+}
+
+// 5. 인터랙션 및 필터 설정
+function setupInteractions() {
+    // 논문용 이미지 추출 버튼 이벤트
+    const exportBtn = document.getElementById('exportBtn');
+    if (exportBtn) {
+        exportBtn.addEventListener('click', () => {
+            const originalText = exportBtn.innerHTML;
+            exportBtn.innerHTML = "⏳ 캡처 중입니다...";
+            exportBtn.style.opacity = '0.7';
+
+            // html2canvas로 대시보드 전체를 이미지로 렌더링
+            html2canvas(document.querySelector('.dashboard-container'), {
+                backgroundColor: '#0f1115',
+                scale: 2 // 고해상도 캡처
+            }).then(canvas => {
+                const link = document.createElement('a');
+                link.download = 'antigravity_dashboard_export.png';
+                link.href = canvas.toDataURL('image/png');
+                link.click();
+                
+                exportBtn.innerHTML = "✅ 추출 완료! 다운로드 폴더 확인";
+                setTimeout(() => {
+                    exportBtn.innerHTML = originalText;
+                    exportBtn.style.opacity = '1';
+                }, 3000);
+            }).catch(err => {
+                console.error("Export failed:", err);
+                exportBtn.innerHTML = "❌ 캡처 실패";
+            });
+        });
+    }
+
+    // 인지망 네트워크 필터 버튼 이벤트
+    const filterBtns = document.querySelectorAll('.control-btn');
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            // 활성화 상태 토글
+            filterBtns.forEach(b => b.classList.remove('active'));
+            e.target.classList.add('active');
+            
+            // 데이터 필터링 후 리렌더링
+            const filterType = e.target.getAttribute('data-filter');
+            if (globalData && globalData.network) {
+                renderNetworkMap(globalData.network, filterType);
+            }
+        });
+    });
+
+    // 지식 서랍(Drawer) 닫기 이벤트
+    const closeDrawerBtn = document.getElementById('closeDrawer');
+    const drawerOverlay = document.getElementById('drawerOverlay');
+    const drawer = document.getElementById('paperDrawer');
+    if (closeDrawerBtn) closeDrawerBtn.addEventListener('click', () => {
+        drawer.classList.remove('open');
+        if(drawerOverlay) drawerOverlay.classList.remove('open');
+    });
+    if (drawerOverlay) drawerOverlay.addEventListener('click', () => {
+        drawer.classList.remove('open');
+        drawerOverlay.classList.remove('open');
+    });
+}
+
+// 6. Keywords Evolution Trend (스트림그래프)
+function renderEvolutionTrend() {
+    const chartDom = document.getElementById('evolutionChart');
+    if (!chartDom) return;
+    const myChart = echarts.init(chartDom);
+    
+    // 플로우 시각화를 위한 Mockup 데이터 (경향성을 보여줍니다)
+    const years = ['2000년대', '2005년~', '2010년~', '2015년~', '2020년~', '최근(2025)'];
+    const dataAnxiety = [12, 15, 8, 5, 3, 2]; // 불안 (과거 지배적, 하락 추세)
+    const dataSubject = [5, 10, 20, 25, 18, 15]; // 주체성 (꾸준한 핵심)
+    const dataResponsibility = [8, 12, 15, 20, 22, 25]; // 책임 (지속 상승세)
+    const dataPostHuman = [0, 0, 2, 8, 25, 35]; // 포스트휴먼 (최근 급부상 블루오션)
+    const dataNihilism = [10, 6, 4, 3, 2, 1]; // 허무주의 (점차 하락)
+
+    const option = {
+        tooltip: { trigger: 'axis', axisPointer: { type: 'line', lineStyle: { color: 'rgba(255,255,255,0.2)' } } },
+        color: ['#00d2ff', '#3a7bd5', '#ff4757', '#2bcbba', '#a55eea'],
+        legend: { data: ['주체성', '책임', '포스트휴머니즘', '불안', '허무주의'], textStyle: { color: '#94a3b8' }, top: 0, icon: 'circle' },
+        grid: { left: '3%', right: '4%', bottom: '5%', top: '15%', containLabel: true },
+        xAxis: { type: 'category', boundaryGap: false, data: years, axisLabel: { color: '#94a3b8' }, axisLine: { lineStyle: { color: '#333' } } },
+        yAxis: { type: 'value', show: false },
+        series: [
+            { name: '주체성', type: 'line', stack: 'Total', smooth: true, lineStyle: { width: 0 }, showSymbol: false, areaStyle: { opacity: 0.8 }, data: dataSubject },
+            { name: '책임', type: 'line', stack: 'Total', smooth: true, lineStyle: { width: 0 }, showSymbol: false, areaStyle: { opacity: 0.8 }, data: dataResponsibility },
+            { name: '포스트휴머니즘', type: 'line', stack: 'Total', smooth: true, lineStyle: { width: 0 }, showSymbol: false, areaStyle: { opacity: 0.8 }, data: dataPostHuman },
+            { name: '불안', type: 'line', stack: 'Total', smooth: true, lineStyle: { width: 0 }, showSymbol: false, areaStyle: { opacity: 0.8 }, data: dataAnxiety },
+            { name: '허무주의', type: 'line', stack: 'Total', smooth: true, lineStyle: { width: 0 }, showSymbol: false, areaStyle: { opacity: 0.8 }, data: dataNihilism }
+        ]
+    };
+    
+    myChart.setOption(option);
+    window.addEventListener('resize', () => myChart.resize());
+}
+
+// 7. 지식 서랍(Drawer) 열기 로직
+function openDrawer(keyword) {
+    const drawer = document.getElementById('paperDrawer');
+    const overlay = document.getElementById('drawerOverlay');
+    const targetEl = document.getElementById('drawerKeywordTarget');
+    const contentEl = document.getElementById('drawerContent');
+    
+    if(!drawer) return;
+
+    targetEl.innerText = keyword;
+    drawer.classList.add('open');
+    if(overlay) overlay.classList.add('open');
+    
+    // 내용 채우기 (로딩 연출)
+    contentEl.innerHTML = '<div style="text-align:center; padding: 3rem; color:#94a3b8;"><span class="status-dot"></span><br><br>연관 KCI 문헌 검색 중...</div>';
+    
+    setTimeout(() => {
+        let papers = [];
+        if (globalData && globalData.focus_gauge) {
+            papers = globalData.focus_gauge.filter(p => p.title.includes(keyword) || p.author.includes(keyword));
+            if(papers.length === 0) {
+                // UI 데모 목적: 완전히 안 겹치면 랜덤하게 연관 논문처럼 노출
+                const shuffled = [...globalData.focus_gauge].sort(() => 0.5 - Math.random());
+                papers = shuffled.slice(0, 3);
+            }
+        }
+        
+        if (papers.length === 0) {
+            contentEl.innerHTML = '<div style="text-align:center; padding: 2rem; color:#ff4757;">검색된 연관 문헌이 없습니다. 새로운 연구 공백입니다!</div>';
+            return;
+        }
+
+        let html = '';
+        papers.forEach(p => {
+            // Mock 초록 연출
+            const abstract = `이 연구는 기존의 담론을 해체하고, <strong>'${keyword}'</strong>의 관점에서 실존주의와 철학적 지형의 구조적 한계를 조망합니다. 특히 ${p.author}의 논지를 바탕으로 어떻게 주체가 자유를 실천할 수 있는지 분석하며...`;
+            
+            html += `
+            <div class="drawer-item" onclick="window.open('https://scholar.google.co.kr/scholar?q=${encodeURIComponent(p.title)}', '_blank')">
+                <div class="drawer-item-title">${p.title} <span style="font-size: 0.8em; opacity:0.6; margin-left:4px;">↗</span></div>
+                <div class="drawer-item-authors">${p.author} | ${p.journal} | 피인용 ${p.citations}회</div>
+                <div class="drawer-item-abstract">${abstract}</div>
+            </div>`;
+        });
+        contentEl.innerHTML = html;
+    }, 600); // 0.6초 로딩
+}
+
+</script>
+</body>
+</html>

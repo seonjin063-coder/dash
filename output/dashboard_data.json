@@ -1,0 +1,1263 @@
+{
+    "focus_gauge": [
+        {
+            "title": "내면아이 치료와 주요 인물들과의 관계 재구성 경험의 해석학적 연구: 실존주의적 관점에서의 논의",
+            "author": "오제은",
+            "citations": 28,
+            "year": 2009,
+            "journal": "상담학연구"
+        },
+        {
+            "title": "1950년대 실존주의 수용사 연구-'교양'으로서의 실존주의를 중심으로",
+            "author": "나종석",
+            "citations": 17,
+            "year": 2010,
+            "journal": "헤겔연구"
+        },
+        {
+            "title": "아렌트 정치적 실존주의의 이론적 연원(淵源)을 찾아서: 성 어거스틴, 마틴 하이데거, 그리고 칼 야스퍼스",
+            "author": "서유경",
+            "citations": 17,
+            "year": 2002,
+            "journal": "한국정치학회보"
+        },
+        {
+            "title": "하이데거의 ‘실존’을 벗어난 사르트르의 ‘현존’",
+            "author": "조광제",
+            "citations": 16,
+            "year": 2010,
+            "journal": "철학논집"
+        },
+        {
+            "title": "교류분석과 실존주의 맥락에서 도박중독자의 자아상태와 인생태도 분석에 관한 연구",
+            "author": "팽혜숙",
+            "citations": 13,
+            "year": 2018,
+            "journal": "교류분석상담연구"
+        },
+        {
+            "title": "사르트르(J. P. Sartre)의 ‘앙가주망(engagement)’ 개념이 현대 교육에 주는 시사점",
+            "author": "최재정",
+            "citations": 12,
+            "year": 2016,
+            "journal": "교육의 이론과 실천"
+        },
+        {
+            "title": "태권도에서 e스포츠로서 태권도는 왜 필요한가?",
+            "author": "권혁정;이상호",
+            "citations": 12,
+            "year": 2023,
+            "journal": "e스포츠연구: 한국e스포츠학회지"
+        },
+        {
+            "title": "50년대 실존주의론",
+            "author": "배경열",
+            "citations": 11,
+            "year": 2003,
+            "journal": "한국문학이론과 비평"
+        },
+        {
+            "title": "1950년대 한국철학계에서의 실존주의 - 박종홍과 조가경을 중심으로 -",
+            "author": "나종석",
+            "citations": 11,
+            "year": 2010,
+            "journal": "사회와 철학"
+        },
+        {
+            "title": "인간이해에 있어서 실존주의의 두 지평과 가브리엘 마르셀의 상호주관성",
+            "author": "이명곤",
+            "citations": 9,
+            "year": 2013,
+            "journal": "동서철학연구"
+        }
+    ],
+    "timeline": [
+        {
+            "year": 2002,
+            "count": 5
+        },
+        {
+            "year": 2003,
+            "count": 5
+        },
+        {
+            "year": 2004,
+            "count": 3
+        },
+        {
+            "year": 2005,
+            "count": 1
+        },
+        {
+            "year": 2006,
+            "count": 3
+        },
+        {
+            "year": 2008,
+            "count": 2
+        },
+        {
+            "year": 2009,
+            "count": 2
+        },
+        {
+            "year": 2010,
+            "count": 9
+        },
+        {
+            "year": 2011,
+            "count": 7
+        },
+        {
+            "year": 2012,
+            "count": 4
+        },
+        {
+            "year": 2013,
+            "count": 6
+        },
+        {
+            "year": 2014,
+            "count": 6
+        },
+        {
+            "year": 2015,
+            "count": 8
+        },
+        {
+            "year": 2016,
+            "count": 11
+        },
+        {
+            "year": 2017,
+            "count": 4
+        },
+        {
+            "year": 2018,
+            "count": 9
+        },
+        {
+            "year": 2019,
+            "count": 5
+        },
+        {
+            "year": 2020,
+            "count": 8
+        },
+        {
+            "year": 2021,
+            "count": 11
+        },
+        {
+            "year": 2022,
+            "count": 32
+        },
+        {
+            "year": 2023,
+            "count": 31
+        },
+        {
+            "year": 2024,
+            "count": 24
+        },
+        {
+            "year": 2025,
+            "count": 33
+        },
+        {
+            "year": 2026,
+            "count": 5
+        }
+    ],
+    "network": {
+        "nodes": [
+            {
+                "id": "실존주의",
+                "name": "실존주의",
+                "value": 122
+            },
+            {
+                "id": "사르트르",
+                "name": "사르트르",
+                "value": 21
+            },
+            {
+                "id": "실존",
+                "name": "실존",
+                "value": 14
+            },
+            {
+                "id": "자유",
+                "name": "자유",
+                "value": 14
+            },
+            {
+                "id": "부조리",
+                "name": "부조리",
+                "value": 13
+            },
+            {
+                "id": "하이데거",
+                "name": "하이데거",
+                "value": 12
+            },
+            {
+                "id": "휴머니즘",
+                "name": "휴머니즘",
+                "value": 10
+            },
+            {
+                "id": "죽음",
+                "name": "죽음",
+                "value": 9
+            },
+            {
+                "id": "불안",
+                "name": "불안",
+                "value": 8
+            },
+            {
+                "id": "existentialism",
+                "name": "existentialism",
+                "value": 5
+            },
+            {
+                "id": "니체",
+                "name": "니체",
+                "value": 5
+            },
+            {
+                "id": "1950년대",
+                "name": "1950년대",
+                "value": 5
+            },
+            {
+                "id": "모더니즘",
+                "name": "모더니즘",
+                "value": 4
+            },
+            {
+                "id": "앙가주망",
+                "name": "앙가주망",
+                "value": 4
+            },
+            {
+                "id": "시몬 드 보부아르",
+                "name": "시몬 드 보부아르",
+                "value": 4
+            },
+            {
+                "id": "존재론",
+                "name": "존재론",
+                "value": 4
+            },
+            {
+                "id": "키에르케고어",
+                "name": "키에르케고어",
+                "value": 4
+            },
+            {
+                "id": "근대성",
+                "name": "근대성",
+                "value": 4
+            },
+            {
+                "id": "무",
+                "name": "무",
+                "value": 4
+            },
+            {
+                "id": "허무주의",
+                "name": "허무주의",
+                "value": 3
+            },
+            {
+                "id": "야스퍼스",
+                "name": "야스퍼스",
+                "value": 3
+            },
+            {
+                "id": "선택",
+                "name": "선택",
+                "value": 3
+            },
+            {
+                "id": "황순원",
+                "name": "황순원",
+                "value": 3
+            },
+            {
+                "id": "삶",
+                "name": "삶",
+                "value": 3
+            },
+            {
+                "id": "책임",
+                "name": "책임",
+                "value": 3
+            },
+            {
+                "id": "존재의 용기",
+                "name": "존재의 용기",
+                "value": 3
+            },
+            {
+                "id": "Existentialism",
+                "name": "Existentialism",
+                "value": 3
+            },
+            {
+                "id": "Kierkegaard",
+                "name": "Kierkegaard",
+                "value": 3
+            },
+            {
+                "id": "저항",
+                "name": "저항",
+                "value": 3
+            },
+            {
+                "id": "민족문학",
+                "name": "민족문학",
+                "value": 3
+            },
+            {
+                "id": "자살",
+                "name": "자살",
+                "value": 3
+            },
+            {
+                "id": "손창섭",
+                "name": "손창섭",
+                "value": 3
+            },
+            {
+                "id": "김수영",
+                "name": "김수영",
+                "value": 3
+            },
+            {
+                "id": "조가경",
+                "name": "조가경",
+                "value": 3
+            },
+            {
+                "id": "박종홍",
+                "name": "박종홍",
+                "value": 3
+            },
+            {
+                "id": "전체주의",
+                "name": "전체주의",
+                "value": 3
+            },
+            {
+                "id": "윤리",
+                "name": "윤리",
+                "value": 3
+            },
+            {
+                "id": "윤동주",
+                "name": "윤동주",
+                "value": 3
+            },
+            {
+                "id": "반공주의",
+                "name": "반공주의",
+                "value": 3
+            },
+            {
+                "id": "행위",
+                "name": "행위",
+                "value": 3
+            },
+            {
+                "id": "존재",
+                "name": "존재",
+                "value": 3
+            },
+            {
+                "id": "상황",
+                "name": "상황",
+                "value": 2
+            },
+            {
+                "id": "후설",
+                "name": "후설",
+                "value": 2
+            },
+            {
+                "id": "비극성",
+                "name": "비극성",
+                "value": 2
+            },
+            {
+                "id": "타자성",
+                "name": "타자성",
+                "value": 2
+            },
+            {
+                "id": "보부아르",
+                "name": "보부아르",
+                "value": 2
+            },
+            {
+                "id": "기투",
+                "name": "기투",
+                "value": 2
+            },
+            {
+                "id": "김은국",
+                "name": "김은국",
+                "value": 2
+            },
+            {
+                "id": "고석규",
+                "name": "고석규",
+                "value": 2
+            },
+            {
+                "id": "유신론적 실존주의",
+                "name": "유신론적 실존주의",
+                "value": 2
+            }
+        ],
+        "links": [
+            {
+                "source": "사르트르",
+                "target": "실존주의",
+                "value": 18
+            },
+            {
+                "source": "모더니즘",
+                "target": "사르트르",
+                "value": 1
+            },
+            {
+                "source": "모더니즘",
+                "target": "실존주의",
+                "value": 3
+            },
+            {
+                "source": "모더니즘",
+                "target": "하이데거",
+                "value": 1
+            },
+            {
+                "source": "사르트르",
+                "target": "하이데거",
+                "value": 3
+            },
+            {
+                "source": "실존주의",
+                "target": "하이데거",
+                "value": 10
+            },
+            {
+                "source": "사르트르",
+                "target": "앙가주망",
+                "value": 4
+            },
+            {
+                "source": "실존주의",
+                "target": "앙가주망",
+                "value": 4
+            },
+            {
+                "source": "상황",
+                "target": "실존",
+                "value": 1
+            },
+            {
+                "source": "사르트르",
+                "target": "상황",
+                "value": 1
+            },
+            {
+                "source": "사르트르",
+                "target": "죽음",
+                "value": 1
+            },
+            {
+                "source": "상황",
+                "target": "실존주의",
+                "value": 1
+            },
+            {
+                "source": "상황",
+                "target": "죽음",
+                "value": 1
+            },
+            {
+                "source": "실존주의",
+                "target": "죽음",
+                "value": 9
+            },
+            {
+                "source": "비극성",
+                "target": "사르트르",
+                "value": 1
+            },
+            {
+                "source": "비극성",
+                "target": "야스퍼스",
+                "value": 1
+            },
+            {
+                "source": "비극성",
+                "target": "후설",
+                "value": 1
+            },
+            {
+                "source": "사르트르",
+                "target": "야스퍼스",
+                "value": 1
+            },
+            {
+                "source": "사르트르",
+                "target": "후설",
+                "value": 2
+            },
+            {
+                "source": "야스퍼스",
+                "target": "후설",
+                "value": 1
+            },
+            {
+                "source": "실존",
+                "target": "자유",
+                "value": 2
+            },
+            {
+                "source": "선택",
+                "target": "실존",
+                "value": 2
+            },
+            {
+                "source": "실존주의",
+                "target": "휴머니즘",
+                "value": 9
+            },
+            {
+                "source": "실존주의",
+                "target": "타자성",
+                "value": 2
+            },
+            {
+                "source": "실존주의",
+                "target": "황순원",
+                "value": 3
+            },
+            {
+                "source": "타자성",
+                "target": "황순원",
+                "value": 1
+            },
+            {
+                "source": "타자성",
+                "target": "휴머니즘",
+                "value": 1
+            },
+            {
+                "source": "황순원",
+                "target": "휴머니즘",
+                "value": 2
+            },
+            {
+                "source": "삶",
+                "target": "실존주의",
+                "value": 2
+            },
+            {
+                "source": "삶",
+                "target": "죽음",
+                "value": 2
+            },
+            {
+                "source": "사르트르",
+                "target": "자유",
+                "value": 4
+            },
+            {
+                "source": "실존주의",
+                "target": "자유",
+                "value": 11
+            },
+            {
+                "source": "기투",
+                "target": "보부아르",
+                "value": 1
+            },
+            {
+                "source": "기투",
+                "target": "실존주의",
+                "value": 2
+            },
+            {
+                "source": "보부아르",
+                "target": "실존주의",
+                "value": 2
+            },
+            {
+                "source": "부조리",
+                "target": "실존주의",
+                "value": 10
+            },
+            {
+                "source": "고석규",
+                "target": "유신론적 실존주의",
+                "value": 1
+            },
+            {
+                "source": "실존주의",
+                "target": "야스퍼스",
+                "value": 1
+            },
+            {
+                "source": "야스퍼스",
+                "target": "하이데거",
+                "value": 1
+            },
+            {
+                "source": "실존주의",
+                "target": "책임",
+                "value": 3
+            },
+            {
+                "source": "실존주의",
+                "target": "존재론",
+                "value": 3
+            },
+            {
+                "source": "실존주의",
+                "target": "존재의 용기",
+                "value": 2
+            },
+            {
+                "source": "Existentialism",
+                "target": "Kierkegaard",
+                "value": 1
+            },
+            {
+                "source": "부조리",
+                "target": "불안",
+                "value": 2
+            },
+            {
+                "source": "부조리",
+                "target": "저항",
+                "value": 2
+            },
+            {
+                "source": "부조리",
+                "target": "죽음",
+                "value": 3
+            },
+            {
+                "source": "불안",
+                "target": "실존주의",
+                "value": 5
+            },
+            {
+                "source": "불안",
+                "target": "저항",
+                "value": 2
+            },
+            {
+                "source": "불안",
+                "target": "죽음",
+                "value": 2
+            },
+            {
+                "source": "실존주의",
+                "target": "저항",
+                "value": 3
+            },
+            {
+                "source": "저항",
+                "target": "죽음",
+                "value": 1
+            },
+            {
+                "source": "민족문학",
+                "target": "실존주의",
+                "value": 2
+            },
+            {
+                "source": "실존주의",
+                "target": "자살",
+                "value": 2
+            },
+            {
+                "source": "실존주의",
+                "target": "키에르케고어",
+                "value": 3
+            },
+            {
+                "source": "자살",
+                "target": "죽음",
+                "value": 1
+            },
+            {
+                "source": "자살",
+                "target": "키에르케고어",
+                "value": 1
+            },
+            {
+                "source": "자살",
+                "target": "하이데거",
+                "value": 1
+            },
+            {
+                "source": "죽음",
+                "target": "키에르케고어",
+                "value": 1
+            },
+            {
+                "source": "죽음",
+                "target": "하이데거",
+                "value": 1
+            },
+            {
+                "source": "키에르케고어",
+                "target": "하이데거",
+                "value": 2
+            },
+            {
+                "source": "손창섭",
+                "target": "실존주의",
+                "value": 3
+            },
+            {
+                "source": "손창섭",
+                "target": "자유",
+                "value": 1
+            },
+            {
+                "source": "손창섭",
+                "target": "하이데거",
+                "value": 1
+            },
+            {
+                "source": "자유",
+                "target": "하이데거",
+                "value": 2
+            },
+            {
+                "source": "니체",
+                "target": "실존주의",
+                "value": 3
+            },
+            {
+                "source": "니체",
+                "target": "허무주의",
+                "value": 1
+            },
+            {
+                "source": "실존주의",
+                "target": "허무주의",
+                "value": 2
+            },
+            {
+                "source": "김수영",
+                "target": "실존주의",
+                "value": 3
+            },
+            {
+                "source": "김수영",
+                "target": "조가경",
+                "value": 1
+            },
+            {
+                "source": "실존주의",
+                "target": "조가경",
+                "value": 3
+            },
+            {
+                "source": "손창섭",
+                "target": "죽음",
+                "value": 1
+            },
+            {
+                "source": "불안",
+                "target": "실존",
+                "value": 2
+            },
+            {
+                "source": "불안",
+                "target": "책임",
+                "value": 1
+            },
+            {
+                "source": "실존",
+                "target": "실존주의",
+                "value": 3
+            },
+            {
+                "source": "실존",
+                "target": "책임",
+                "value": 1
+            },
+            {
+                "source": "1950년대",
+                "target": "박종홍",
+                "value": 1
+            },
+            {
+                "source": "1950년대",
+                "target": "사르트르",
+                "value": 1
+            },
+            {
+                "source": "1950년대",
+                "target": "실존주의",
+                "value": 5
+            },
+            {
+                "source": "1950년대",
+                "target": "조가경",
+                "value": 1
+            },
+            {
+                "source": "박종홍",
+                "target": "사르트르",
+                "value": 1
+            },
+            {
+                "source": "박종홍",
+                "target": "실존주의",
+                "value": 2
+            },
+            {
+                "source": "박종홍",
+                "target": "조가경",
+                "value": 2
+            },
+            {
+                "source": "사르트르",
+                "target": "조가경",
+                "value": 1
+            },
+            {
+                "source": "근대성",
+                "target": "실존주의",
+                "value": 4
+            },
+            {
+                "source": "근대성",
+                "target": "전체주의",
+                "value": 2
+            },
+            {
+                "source": "실존주의",
+                "target": "전체주의",
+                "value": 2
+            },
+            {
+                "source": "무",
+                "target": "부조리",
+                "value": 1
+            },
+            {
+                "source": "무",
+                "target": "실존주의",
+                "value": 3
+            },
+            {
+                "source": "무",
+                "target": "자유",
+                "value": 1
+            },
+            {
+                "source": "무",
+                "target": "죽음",
+                "value": 1
+            },
+            {
+                "source": "부조리",
+                "target": "자유",
+                "value": 3
+            },
+            {
+                "source": "자유",
+                "target": "죽음",
+                "value": 1
+            },
+            {
+                "source": "자유",
+                "target": "휴머니즘",
+                "value": 2
+            },
+            {
+                "source": "선택",
+                "target": "자유",
+                "value": 1
+            },
+            {
+                "source": "실존주의",
+                "target": "윤리",
+                "value": 1
+            },
+            {
+                "source": "윤리",
+                "target": "허무주의",
+                "value": 1
+            },
+            {
+                "source": "실존주의",
+                "target": "윤동주",
+                "value": 1
+            },
+            {
+                "source": "윤동주",
+                "target": "키에르케고어",
+                "value": 1
+            },
+            {
+                "source": "반공주의",
+                "target": "실존주의",
+                "value": 3
+            },
+            {
+                "source": "실존",
+                "target": "키에르케고어",
+                "value": 1
+            },
+            {
+                "source": "김은국",
+                "target": "존재의 용기",
+                "value": 1
+            },
+            {
+                "source": "박종홍",
+                "target": "하이데거",
+                "value": 1
+            },
+            {
+                "source": "윤리",
+                "target": "전체주의",
+                "value": 1
+            },
+            {
+                "source": "윤리",
+                "target": "행위",
+                "value": 1
+            },
+            {
+                "source": "전체주의",
+                "target": "행위",
+                "value": 1
+            },
+            {
+                "source": "Kierkegaard",
+                "target": "실존주의",
+                "value": 1
+            },
+            {
+                "source": "부조리",
+                "target": "사르트르",
+                "value": 1
+            },
+            {
+                "source": "무",
+                "target": "불안",
+                "value": 1
+            },
+            {
+                "source": "부조리",
+                "target": "비극성",
+                "value": 1
+            },
+            {
+                "source": "비극성",
+                "target": "실존주의",
+                "value": 1
+            },
+            {
+                "source": "비극성",
+                "target": "죽음",
+                "value": 1
+            },
+            {
+                "source": "부조리",
+                "target": "삶",
+                "value": 1
+            },
+            {
+                "source": "부조리",
+                "target": "실존",
+                "value": 1
+            },
+            {
+                "source": "부조리",
+                "target": "자살",
+                "value": 1
+            },
+            {
+                "source": "삶",
+                "target": "실존",
+                "value": 1
+            },
+            {
+                "source": "삶",
+                "target": "자살",
+                "value": 1
+            },
+            {
+                "source": "실존",
+                "target": "자살",
+                "value": 1
+            },
+            {
+                "source": "손창섭",
+                "target": "휴머니즘",
+                "value": 1
+            },
+            {
+                "source": "민족문학",
+                "target": "사르트르",
+                "value": 1
+            },
+            {
+                "source": "부조리",
+                "target": "황순원",
+                "value": 1
+            },
+            {
+                "source": "부조리",
+                "target": "휴머니즘",
+                "value": 1
+            },
+            {
+                "source": "자유",
+                "target": "황순원",
+                "value": 1
+            },
+            {
+                "source": "모더니즘",
+                "target": "윤동주",
+                "value": 1
+            },
+            {
+                "source": "사르트르",
+                "target": "실존",
+                "value": 2
+            },
+            {
+                "source": "실존",
+                "target": "하이데거",
+                "value": 1
+            },
+            {
+                "source": "실존",
+                "target": "후설",
+                "value": 1
+            },
+            {
+                "source": "실존주의",
+                "target": "후설",
+                "value": 1
+            },
+            {
+                "source": "하이데거",
+                "target": "후설",
+                "value": 1
+            },
+            {
+                "source": "1950년대",
+                "target": "유신론적 실존주의",
+                "value": 1
+            },
+            {
+                "source": "1950년대",
+                "target": "자유",
+                "value": 1
+            },
+            {
+                "source": "실존주의",
+                "target": "유신론적 실존주의",
+                "value": 1
+            },
+            {
+                "source": "유신론적 실존주의",
+                "target": "자유",
+                "value": 1
+            },
+            {
+                "source": "반공주의",
+                "target": "휴머니즘",
+                "value": 1
+            },
+            {
+                "source": "고석규",
+                "target": "무",
+                "value": 1
+            },
+            {
+                "source": "고석규",
+                "target": "실존주의",
+                "value": 1
+            },
+            {
+                "source": "고석규",
+                "target": "존재",
+                "value": 1
+            },
+            {
+                "source": "고석규",
+                "target": "존재론",
+                "value": 1
+            },
+            {
+                "source": "고석규",
+                "target": "하이데거",
+                "value": 1
+            },
+            {
+                "source": "무",
+                "target": "존재",
+                "value": 1
+            },
+            {
+                "source": "무",
+                "target": "존재론",
+                "value": 1
+            },
+            {
+                "source": "무",
+                "target": "하이데거",
+                "value": 1
+            },
+            {
+                "source": "실존주의",
+                "target": "존재",
+                "value": 3
+            },
+            {
+                "source": "존재",
+                "target": "존재론",
+                "value": 1
+            },
+            {
+                "source": "존재",
+                "target": "하이데거",
+                "value": 1
+            },
+            {
+                "source": "존재론",
+                "target": "하이데거",
+                "value": 2
+            },
+            {
+                "source": "사르트르",
+                "target": "행위",
+                "value": 1
+            },
+            {
+                "source": "실존",
+                "target": "앙가주망",
+                "value": 1
+            },
+            {
+                "source": "실존",
+                "target": "행위",
+                "value": 1
+            },
+            {
+                "source": "실존주의",
+                "target": "행위",
+                "value": 2
+            },
+            {
+                "source": "앙가주망",
+                "target": "행위",
+                "value": 1
+            },
+            {
+                "source": "김수영",
+                "target": "무",
+                "value": 1
+            },
+            {
+                "source": "김수영",
+                "target": "휴머니즘",
+                "value": 1
+            },
+            {
+                "source": "1950년대",
+                "target": "모더니즘",
+                "value": 1
+            },
+            {
+                "source": "니체",
+                "target": "키에르케고어",
+                "value": 1
+            },
+            {
+                "source": "니체",
+                "target": "하이데거",
+                "value": 1
+            },
+            {
+                "source": "불안",
+                "target": "자살",
+                "value": 1
+            },
+            {
+                "source": "불안",
+                "target": "존재",
+                "value": 1
+            },
+            {
+                "source": "자살",
+                "target": "저항",
+                "value": 1
+            },
+            {
+                "source": "자살",
+                "target": "존재",
+                "value": 1
+            },
+            {
+                "source": "저항",
+                "target": "존재",
+                "value": 1
+            },
+            {
+                "source": "불안",
+                "target": "삶",
+                "value": 1
+            },
+            {
+                "source": "불안",
+                "target": "자유",
+                "value": 1
+            },
+            {
+                "source": "반공주의",
+                "target": "자유",
+                "value": 1
+            },
+            {
+                "source": "책임",
+                "target": "황순원",
+                "value": 1
+            },
+            {
+                "source": "사르트르",
+                "target": "존재론",
+                "value": 1
+            },
+            {
+                "source": "자유",
+                "target": "존재론",
+                "value": 1
+            },
+            {
+                "source": "존재",
+                "target": "행위",
+                "value": 1
+            }
+        ]
+    }
+}

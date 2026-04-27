@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Antigravity Dashboard | Existentialism & Freedom</title>
+    <!-- 고급스러운 폰트 세팅 -->
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;600&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <!-- ECharts (강력한 시각화 라이브러리) -->
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js"></script>
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- 상단 헤더 -->
+        <header class="header">
+            <div class="logo-wrapper">
+                <h1 class="logo">ANTIGRAVITY <span>NAV</span></h1>
+                <div class="subtitle">실존주의 '자유' 연구 동향 모니터링 시스템</div>
+            </div>
+            <div class="header-status">
+                <span class="status-dot"></span> System Online
+            </div>
+        </header>
+
+        <!-- 메인 차량 대시보드 구조 -->
+        <main class="grid-container">
+            
+            <!-- 왼쪽 패널: 1. 영향력 랭킹 (Focus Gauge) -->
+            <section class="panel focus-gauge">
+                <h2>📊 영향력 랭킹 <span class="badge">Focus Gauge</span></h2>
+                <div class="panel-desc">가장 많이 읽히고 인용된 핵심 철학 문헌 Top 10</div>
+                <div class="list-container" id="focusList">
+                    <!-- JavaScript가 데이터를 여기에 채웁니다 -->
+                </div>
+            </section>
+
+            <!-- 오른쪽 상단: 2. 인지망 (Navigation Map) -->
+            <section class="panel nav-map">
+                <h2>🕸️ 개념 연결 인지망 <span class="badge">Navigation</span></h2>
+                <div class="panel-desc">키워드 네트워크: '자유'와 함께 다루어지는 철학적 개념들의 관계도</div>
+                <div class="chart-container" id="networkChart"></div>
+            </section>
+
+            <!-- 오른쪽 하단: 3. 연도별 연구 밀도 (Timeline) -->
+            <section class="panel timeline">
+                <h2>📈 연구 밀도 변화 <span class="badge">Timeline</span></h2>
+                <div class="panel-desc">연도별 학술 논문 발행 추이 (관심도 곡선)</div>
+                <div class="chart-container" id="timelineChart"></div>
+            </section>
+            
+        </main>
+    </div>
+
+    <!-- 로직 스크립트 연결 -->
+    <script src="app.js"></script>
+</body>
+</html>
